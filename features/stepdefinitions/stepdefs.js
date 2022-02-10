@@ -7,11 +7,15 @@ Given("I am a user", function(){
   this.userType = "user";
 });
 
-When("I want to use the app", function(){
-  this.actualAnswer = "online";
+When("the website is {}", function(expectedAnswer){
+  if(expectedAnswer == "up"){
+    this.actualAnswer = "can";
+  }else{
+    this.actualAnswer = "can't";
+  }
 });
 
-Then("I can find it {} to use", function(expectedAnswer){
+Then("I {} find it online to use", function(expectedAnswer){
   assert.strictEqual(this.actualAnswer, expectedAnswer);
 });
 
