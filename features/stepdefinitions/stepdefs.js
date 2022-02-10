@@ -31,28 +31,6 @@ Then("I want the website to be {} so I don't have to worry about my data being c
 
 
 // Feature 3
-Given("I am {string}", function(expectedAnswer){
-  if(expectedAnswer == "the owner"){
-    this.userType = "owner";
-  }else{
-    this.userType = "not the app owner";
-  }
-});
-
-When("I want to check for which songs were played", function(){
-  if(this.userType == "owner"){
-    this.actualAnswer = "can";
-  }else{
-    this.actualAnswer = "can't";
-  }
-});
-
-Then("I {} get a list of songs", function(expectedAnswer){
-  assert.strictEqual(this.actualAnswer, expectedAnswer);
-});
-
-
-// Feature 4
 Given("I am a user of SongSync", function(){
   this.userType = "user";
 });
